@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xd:xmldiff version="1.0" srcDocHash="6929585627815513927" options="None" fragments="no" xmlns:xd="http://schemas.microsoft.com/xmltools/2002/xmldiff">
+  <xd:node match="1">
+    <xd:node match="1">
+      <xd:node match="1">
+        <xd:node match="1">
+          <xd:node match="3">
+            <xd:change match="@Value">0</xd:change>
+          </xd:node>
+          <xd:node match="6">
+            <xd:change match="@Value">20/06/2019 11:57:26</xd:change>
+          </xd:node>
+        </xd:node>
+      </xd:node>
+    </xd:node>
+  </xd:node>
+</xd:xmldiff>

@@ -1,0 +1,27 @@
+<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="SubPageInfo" Type="STR">
+      <Items Name="SubPage" Type="FIX">
+        <Item Name="PAGE_ID" Type="STR" Value="1" />
+        <Item Name="WINNER" Type="STR" Value="1" />
+        <Item Name="ROW_COUNT" Type="STR" Value="0" />
+        <Item Name="ROW_MAX" Type="STR" Value="10" />
+        <Item Name="CREATE_DATE" Type="STR" Value="17/07/2019 15:43:01" />
+        <Item Name="UPDATE_DATE" Type="STR" Value="" />
+      </Items>
+    </Section>
+    <Section ID="2" Name="Row" Type="STR">
+      <Items Name="RowInfo" Type="SEQ">
+        <Means Name="Row">
+          <Mean ID="C00" Name="DocClassID" Type="STR" Desc="" />
+          <Mean ID="C01" Name="DocID" Type="STR" Desc="" />
+          <Mean ID="C02" Name="Token" Type="STR" Desc="" />
+          <Mean ID="C03" Name="Hashing" Type="STR" Desc="" />
+          <Mean ID="C04" Name="DSig" Type="STR" Desc="" />
+          <Mean ID="C05" Name="SpaceGateID_Sender" Type="STR" Desc="" />
+          <Mean ID="C06" Name="SpaceGateID_Update" Type="STR" Desc="" />
+        </Means>
+      </Items>
+    </Section>
+  </Data>
+</Document>

@@ -1,0 +1,11 @@
+<Document ID="1" Name="Table"> 
+  <Data>   
+    <Section ID="@Databasename" Name="">
+      <Items ID="@Tablename" Name="@Tabledetail">
+        <Means MaxID="0">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto"/>
+        </Means>        
+      </Items>      
+    </Section> 
+  </Data>
+</Document>

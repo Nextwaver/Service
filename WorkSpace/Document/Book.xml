@@ -1,0 +1,21 @@
+﻿<Document ID="" Name="">
+    <Data>
+        <Section ID="1" Name="BookInfo" Type="STR">
+            <Items Name="Book" Type="FIX">
+                <Item Name="BOOK_CLASS_ID" Type="STR" Value="" />
+                <Item Name="BOOK_CLASS_NAME" Type="STR" Value="" />
+                <Item Name="PAGE_COUNT" Type="STR" Value="" />
+                <Item Name="PAGE_MAX" Type="STR" Value="" />
+                <Item Name="CREATE_DATE" Type="STR" Value="" />
+                <Item Name="UPDATE_DATE" Type="STR" Value="" />
+            </Items>
+        </Section>
+        <Section ID="2" Name="ReferencePage" Type="STR">
+            <Items Name="ReferencePageInfo" Type="SEQ">
+                <Means Name="ReferencePage">
+                    <Mean ID="C00" Name="PageID" Type="STR" Desc="" />
+                </Means>
+            </Items>
+        </Section>
+    </Data>
+</Document>

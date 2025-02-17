@@ -1,0 +1,1325 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Types>
+    <Type ID="STR" Detail=""/>
+    <Type ID="XML" Detail=""/>
+  </Types>
+  <Connection>
+    <Item ID="MSSQL01" Type="MSSQL" Server="DESKTOP-DO80R7R" Database="TestProcess" Login="sa" Password="Admin1234" />
+    <Item ID="MSSQL02" Type="MSSQL" Server="localhost" Database="DEMOSTATE" Login="sa" Password="nextwaver" />
+    <Item ID="MSSQLGUNBOOK" Type="MSSQL" Server="DESKTOP-O3I9FMD\SQLEXPRESS2016" Database="GunRegBook" Login="sa" Password="nextwaver" />
+    <Item ID="MSSQLJOB" Type="MSSQL" Server="DESKTOP-O3I9FMD\SQLEXPRESS2016" Database="Job" Login="sa" Password="nextwaver" />
+    <Item ID="MSSQLAPPJOB" Type="MSSQL" Server="DESKTOP-O3I9FMD\SQLEXPRESS2016" Database="JobApp" Login="sa" Password="nextwaver" />
+    <Item ID="MSSQLFACEBOOK" Type="MSSQL" Server="DESKTOP-E7I9S5L\SQLEXPRESS" Database="Facebook" Login="sa" Password="nextwaver" />
+  </Connection>
+ 
+  <Process OFSID="OF.0001" Name="users" WSTable="users" DBConnectionID="MSSQL01" Detail="ข้อมูลผู้ใช้งาน" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [users]
+        ([ID],[USERNAME],[PASSWORD]
+        ,[TITLE],[FIRSTNAME],[LASTNAME]
+        ,[POSITION_CODE],[CREATE_DATE]
+        ,[CREATE_BY],[UPDATE_DATE],[UPDATE_BY])
+        VALUES
+        ('@ID@','@USERNAME@','@PASSWORD@'
+        ,'@TITLE@','@FIRSTNAME@','@LASTNAME@'
+        ,'@POSITION_CODE@','@CREATE_DATE@'
+        ,'@CREATE_BY@','@UPDATE_DATE@','@UPDATE_BY@')
+      </Insert>
+      <Delete>DELETE FROM [users] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="USERNAME" Parameter="@USERNAME@"/>
+      <Column Type="STR" Name="PASSWORD" Parameter="@PASSWORD@"/>
+      <Column Type="STR" Name="TITLE" Parameter="@TITLE@"/>
+      <Column Type="STR" Name="FIRSTNAME" Parameter="@FIRSTNAME@"/>
+      <Column Type="STR" Name="LASTNAME" Parameter="@LASTNAME@"/>
+      <Column Type="STR" Name="POSITION_CODE" Parameter="@POSITION_CODE@"/>
+      <Column Type="STR" Name="CREATE_DATE" Parameter="@CREATE_DATE@"/>
+      <Column Type="STR" Name="CREATE_BY" Parameter="@CREATE_BY@"/>
+      <Column Type="STR" Name="UPDATE_DATE" Parameter="@UPDATE_DATE@"/>
+      <Column Type="STR" Name="UPDATE_BY" Parameter="@UPDATE_BY@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="position" WSTable="position" DBTable="position" DBConnectionID="MSSQL01" Detail="ข้อมูลตำแหน่ง" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [position]
+        ([ID],[POSITION_CODE],[POSITION_NAME]
+        ,[PARENT_CODE],[CREATE_DATE],[CREATE_BY]
+        ,[UPDATE_DATE],[UPDATE_BY],[XML_DATA])
+        VALUES
+        ('@ID@','@POSITION_CODE@','@POSITION_NAME@'
+        ,'@PARENT_CODE@','@CREATE_DATE@','@CREATE_BY@'
+        ,'@UPDATE_DATE@','@UPDATE_BY@','@XML_DATA@')
+      </Insert>
+      <Delete>DELETE FROM [position] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="POSITION_CODE" Parameter="@POSITION_CODE@"/>
+      <Column Type="STR" Name="POSITION_NAME" Parameter="@POSITION_NAME@"/>
+      <Column Type="STR" Name="PARENT_CODE" Parameter="@PARENT_CODE@"/>
+      <Column Type="STR" Name="CREATE_DATE" Parameter="@CREATE_DATE@"/>
+      <Column Type="STR" Name="CREATE_BY" Parameter="@CREATE_BY@"/>
+      <Column Type="STR" Name="UPDATE_DATE" Parameter="@UPDATE_DATE@"/>
+      <Column Type="STR" Name="UPDATE_BY" Parameter="@UPDATE_BY@"/>
+      <Column Type="STR" Name="UPDATE_BY" Parameter="@UPDATE_BY@"/>
+      <Column Type="XML" Name="" Parameter="@XML_DATA@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="DEMOSTATE" WSTable="DOC" DBTable="DOC" DBConnectionID="MSSQL02" Detail="ใบสมัคร" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [DOC]
+        ([ID],[FULLNAME],[STATUS],[DATA_STATUS])
+        VALUES
+        ('@ID@','@FULLNAME@','@STATUS@','@DATA_STATUS@')
+      </Insert>
+      <Delete>DELETE FROM [DOC] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="FULLNAME" Parameter="@FULLNAME@"/>
+      <Column Type="STR" Name="STATUS" Parameter="@STATUS@"/>
+      <Column Type="STR" Name="DATA_STATUS" Parameter="@DATA_STATUS@"/>
+    </Columns>
+    <Document>
+      <Items Name="Profile" Type="FIX">
+        <Query>
+          <Insert>
+            INSERT INTO [Register_Form]
+            ([ID],[PreName],[FirstName],[LastName]
+            ,[Sex],[Weight],[Height],[BirthDate]
+            ,[Age],[Nationality],[Race],[Address]
+            ,[Status],[Tel],[EMail])
+            VALUES
+            ('@ID@','@PreName@','@FirstName@','@LastName@'
+            ,'@Sex@','@Weight@','@Height@','@BirthDate@'
+            ,'@Age@' ,'@Nationality@','@Race@','@Address@'
+            ,'@Status@','@Tel@','@EMail@')
+          </Insert>
+          <Delete>DELETE FROM [Register_Form] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="PreName" Parameter="@PreName@"/>
+          <Column Type="STR" Name="FirstName" Parameter="@FirstName@"/>
+          <Column Type="STR" Name="LastName" Parameter="@LastName@"/>
+          <Column Type="STR" Name="Sex" Parameter="@Sex@"/>
+          <Column Type="STR" Name="Weight" Parameter="@Weight@"/>
+          <Column Type="STR" Name="Height" Parameter="@Height@"/>
+          <Column Type="STR" Name="BirthDate" Parameter="@BirthDate@"/>
+          <Column Type="STR" Name="Age" Parameter="@Age@"/>
+          <Column Type="STR" Name="Nationality" Parameter="@Nationality@"/>
+          <Column Type="STR" Name="Race" Parameter="@Race@"/>
+          <Column Type="STR" Name="Address" Parameter="@Address@"/>
+          <Column Type="STR" Name="Status" Parameter="@Status@"/>
+          <Column Type="STR" Name="Tel" Parameter="@Tel@"/>
+          <Column Type="STR" Name="E-mail" Parameter="@EMail@"/>
+        </Columns>
+      </Items>
+      <Items Name="History_Education" Type="SEQ">
+        <Query>
+          <Insert>
+            INSERT INTO [History_Education]
+            ([ID],[Degree],[Educational],[KeyID]
+            ,[EndYear],[Grade],[Branch])
+            VALUES
+            ('@ID@','@Degree@','@Educational@','@KeyID@'
+            ,'@EndYear@','@Grade@','@Branch@')
+          </Insert>
+          <Delete>DELETE FROM [History_Education] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="KeyID" Parameter="@KeyID@" />
+          <Column Type="STR" Name="Degree" Parameter="@Degree@"/>
+          <Column Type="STR" Name="Educational" Parameter="@Educational@"/>
+          <Column Type="STR" Name="EndYear" Parameter="@EndYear@"/>
+          <Column Type="STR" Name="Grade" Parameter="@Grade@"/>
+          <Column Type="STR" Name="Branch" Parameter="@Branch@"/>
+        </Columns>
+        <GobalColumns Name="Profile" Type="FIX">
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+        </GobalColumns>
+      </Items>
+    </Document>
+  </Process>
+
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="Book" DBTable="Book" DBConnectionID="MSSQLGUNBOOK" Detail="ข้อมูลหนังสือทะเบียนปืน" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [Book]
+        ([ID]
+        ,[BookNo],[BookYear],[GunRegIDPrefix]
+        ,[GunRegIDStart],[GunRegIDEnd],[PageTotal],[BookStatus]
+        ,[CreateDate],[CreateBy]
+        ,[UpdateDate],[UpdateBy],[GunGroup],[Expire_Date],[Destrory_Date])
+        VALUES
+        ('@ID@'
+        ,'@BookNo@','@BookYear@','@GunRegIDPrefix@'
+        ,'@GunRegIDStart@','@GunRegIDEnd@','@PageTotal@','@BookStatus@'
+        ,'@CreateDate@' ,'@CreateBy@'
+        ,'@UpdateDate@','@UpdateBy@','@GroupGun@','@Expire_Date@','@Destrory_Date@')
+      </Insert>
+      <Delete>DELETE FROM [Book] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="BOOKNO" Parameter="@BookNo@"/>
+      <Column Type="STR" Name="BOOKYEAR" Parameter="@BookYear@"/>
+      <Column Type="STR" Name="GUNREGIDPREFIX" Parameter="@GunRegIDPrefix@"/>
+      <Column Type="STR" Name="GUNREGIDSTART" Parameter="@GunRegIDStart@"/>	  
+      <Column Type="STR" Name="GUNREGIDEND" Parameter="@GunRegIDEnd@"/>
+      <Column Type="STR" Name="PAGETOTAL" Parameter="@PageTotal@"/>
+      <Column Type="STR" Name="BOOKSTATUS" Parameter="@BookStatus@"/>
+      <Column Type="STR" Name="CREATEDATE" Parameter="@CreateDate@"/>
+      <Column Type="STR" Name="CREATEBY" Parameter="@CreateBy@"/>
+      <Column Type="STR" Name="UPDATEDATE" Parameter="@UpdateDate@"/>
+      <Column Type="STR" Name="UPDATEBY" Parameter="@UpdateBy@"/>
+      <Column Type="STR" Name="GROUPGUN" Parameter="@GroupGun@"/>
+      <Column Type="STR" Name="EXPIRE_DATE" Parameter="@Expire_Date@"/>
+      <Column Type="STR" Name="DESTRORY_DATE" Parameter="@Destrory_Date@"/>
+    </Columns>
+  </Process>
+  
+  <Process OFSID="OF.0001" Name="PAGE" WSTable="Page" DBTable="Page" DBConnectionID="MSSQLGUNBOOK" Detail="ข้อมูลหน้าทะเบียนปืน" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [Page]
+        ([ID]
+        ,[BookNo]
+        ,[PageNo]
+        ,[PageVersion]
+        ,[ImgUrl]
+        ,[PageStatus]
+        ,[ScanDate]
+        ,[ScanBy]
+        ,[DataEntryDate]
+        ,[DataEntryBy]
+        ,[SummitDate]
+        ,[SummitBy]
+        ,[ApproveDate]
+        ,[ApproveBy]
+        ,[CreateDate]
+        ,[CreateBy]
+        ,[UpdateDate]
+        ,[UpdateBy])
+        VALUES
+        ('@ID@'
+        ,'@BookNo@'
+        ,'@PageNo@'
+        ,'@PageVersion@'
+        ,'@ImgUrl@'
+        ,'@PageStatus@'
+        ,'@ScanDate@'
+        ,'@ScanBy@'
+        ,'@DataEntryDate@'
+        ,'@DataEntryBy@'
+        ,'@SummitDate@'
+        ,'@SummitBy@'
+        ,'@ApproveDate@'
+        ,'@ApproveBy@'
+        ,'@CreateDate@'
+        ,'@CreateBy@'
+        ,'@UpdateDate@'
+        ,'@UpdateBy@')
+      </Insert>
+      <Delete>DELETE FROM [Page] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="BOOKNO" Parameter="@BookNo@"/>
+      <Column Type="STR" Name="PAGENO" Parameter="@PageNo@"/>
+      <Column Type="STR" Name="PAGEVERSION" Parameter="@PageVersion@"/>
+      <Column Type="STR" Name="IMGURL" Parameter="@ImgUrl@"/>
+      <Column Type="STR" Name="PAGESTATUS" Parameter="@PageStatus@"/>
+      <Column Type="STR" Name="SCANDATE" Parameter="@ScanDate@"/>
+      <Column Type="STR" Name="SCANBY" Parameter="@ScanBy@"/>
+      <Column Type="STR" Name="DATAENTRYDATE" Parameter="@DataEntryDate@"/>
+      <Column Type="STR" Name="DATAENTRYBY" Parameter="@DataEntryBy@"/>
+      <Column Type="STR" Name="SUBMITDATE" Parameter="@SummitDate@"/>
+      <Column Type="STR" Name="SUBMITBY" Parameter="@SummitBy@"/>
+      <Column Type="STR" Name="APPROVEDATE" Parameter="@ApproveDate@"/>
+      <Column Type="STR" Name="APPROVEBY" Parameter="@ApproveBy@"/>
+      <Column Type="STR" Name="CREATEDATE" Parameter="@CreateDate@"/>
+      <Column Type="STR" Name="CREATEBY" Parameter="@CreateBy@"/>
+      <Column Type="STR" Name="UPDATEDATE" Parameter="@UpdateDate@"/>
+      <Column Type="STR" Name="UPDATEBY" Parameter="@UpdateBy@"/>
+    </Columns>
+    
+    <Document>
+      <Items Name="Page" Type="FIX">
+        <Query>
+          <Insert>
+            INSERT INTO [Page]
+            ([ID]
+            ,[BookNo]
+            ,[PageNo]
+            ,[PageVersion]
+            ,[ImgUrl]
+            ,[PageStatus]
+            ,[ScanDate]
+            ,[ScanBy]
+            ,[DataEntryDate]
+            ,[DataEntryBy]
+            ,[SummitDate]
+            ,[SummitBy]
+            ,[ApproveDate]
+            ,[ApproveBy]
+            ,[CreateDate]
+            ,[CreateBy]
+            ,[UpdateDate]
+            ,[UpdateBy])
+            VALUES
+            ('@ID@'
+            ,'@BookNo@'
+            ,'@PageNo@'
+            ,'@PageVersion@'
+            ,'@ImgUrl@'
+            ,'@PageStatus@'
+            ,'@ScanDate@'
+            ,'@ScanBy@'
+            ,'@DataEntryDate@'
+            ,'@DataEntryBy@'
+            ,'@SummitDate@'
+            ,'@SummitBy@'
+            ,'@ApproveDate@'
+            ,'@ApproveBy@'
+            ,'@CreateDate@'
+            ,'@CreateBy@'
+            ,'@UpdateDate@'
+            ,'@UpdateBy@')
+          </Insert>
+          <Delete>DELETE FROM [Page] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="BookNo" Parameter="@BookNo@"/>
+          <Column Type="STR" Name="PageNo" Parameter="@PageNo@"/>
+          <Column Type="STR" Name="PageVersion" Parameter="@PageVersion@"/>
+          <Column Type="STR" Name="ImgUrl" Parameter="@ImgUrl@"/>
+          <Column Type="STR" Name="PageStatus" Parameter="@PageStatus@"/>
+          <Column Type="STR" Name="ScanDate" Parameter="@ScanDate@"/>
+          <Column Type="STR" Name="ScanBy" Parameter="@ScanBy@"/>
+          <Column Type="STR" Name="DataEntryDate" Parameter="@DataEntryDate@"/>
+          <Column Type="STR" Name="DataEntryBy" Parameter="@DataEntryBy@"/>
+          <Column Type="STR" Name="SummitDate" Parameter="@SummitDate@"/>
+          <Column Type="STR" Name="SummitBy" Parameter="@SummitBy@"/>
+          <Column Type="STR" Name="ApproveDate" Parameter="@ApproveDate@"/>
+          <Column Type="STR" Name="ApproveBy" Parameter="@ApproveBy@"/>
+          <Column Type="STR" Name="CreateDate" Parameter="@CreateDate@"/>
+          <Column Type="STR" Name="CreateBy" Parameter="@CreateBy@"/>
+          <Column Type="STR" Name="UpdateDate" Parameter="@UpdateDate@"/>
+          <Column Type="STR" Name="UpdateBy" Parameter="@UpdateBy@"/>
+        </Columns>
+      </Items>
+      
+      <Items Name="RecordInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            INSERT INTO [Record]
+            ([ID]
+            ,[BookNo]
+            ,[PageNo]
+            ,[PageVersion]
+            ,[GunRegID]
+            ,[GunNo]
+            ,[GunGroup]
+            ,[GunType]
+            ,[GunSize]
+            ,[GunBrand]
+            ,[GunMaxShot]
+            ,[GunBarrel]
+            ,[GunColor]
+            ,[GunOwner]
+            ,[GunLottotal]
+            ,[GunRemark]
+            ,[GunRegDate]
+            ,[GunCountry]
+            ,[CreateDate]
+            ,[CreateBy]
+            ,[UpdateDate]
+            ,[UpdateBy])
+            VALUES
+            ('@ID@'
+            ,'@BookNo@'
+            ,'@PageNo@'
+            ,'@PageVersion@'
+            ,'@GunRegID@'
+            ,'@GunNo@'
+            ,'@GunGroup@'
+            ,'@GunType@'
+            ,'@GunSize@'
+            ,'@GunBrand@'
+            ,'@GunMaxShot@'
+            ,'@GunBarrel@'
+            ,'@GunColor@'
+            ,'@GunOwner@'
+            ,'@GunLottotal@'
+            ,'@GunRemark@'
+            ,'@GunRegDate@'
+            ,'@GunCountry@'
+            ,'@CreateDate@'
+            ,'@CreateBy@'
+            ,'@UpdateDate@'
+            ,'@UpdateBy@' )
+          </Insert>
+          <Delete>DELETE FROM [Record] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="GunRegID" Parameter="@GunRegID@" />
+          <Column Type="STR" Name="GunNo" Parameter="@GunNo@" />
+          <Column Type="STR" Name="GunGroup" Parameter="@GunGroup@" />
+          <Column Type="STR" Name="GunType" Parameter="@GunType@" />
+          <Column Type="STR" Name="GunSize" Parameter="@GunSize@" />
+          <Column Type="STR" Name="GunBrand" Parameter="@GunBrand@" />
+          <Column Type="STR" Name="GunMaxShot" Parameter="@GunMaxShot@" />
+          <Column Type="STR" Name="GunBarrel" Parameter="@GunBarrel@" />
+          <Column Type="STR" Name="GunColor" Parameter="@GunColor@" />
+          <Column Type="STR" Name="GunOwner" Parameter="@GunOwner@" />
+          <Column Type="STR" Name="GunLottotal" Parameter="@GunLottotal@" />
+          <Column Type="STR" Name="GunRemark" Parameter="@GunRemark@" />
+          <Column Type="STR" Name="GunRegDate" Parameter="@GunRegDate@" />
+          <Column Type="STR" Name="GunCountry" Parameter="@GunCountry@" />
+          <Column Type="STR" Name="CreateDate" Parameter="@CreateDate@" />
+          <Column Type="STR" Name="CreateBy" Parameter="@CreateBy@" />
+          <Column Type="STR" Name="UpdateDate" Parameter="@UpdateDate@" />
+          <Column Type="STR" Name="UpdateBy" Parameter="@UpdateBy@" />
+        </Columns>
+        <GobalColumns Name="Page" Type="FIX">
+          <Column Type="STR" Name="BookNo" Parameter="@BookNo@" />
+          <Column Type="STR" Name="PageNo" Parameter="@PageNo@" />
+          <Column Type="STR" Name="PageVersion" Parameter="@PageVersion@" />
+        </GobalColumns>
+      </Items>
+    </Document>
+  </Process>
+
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunType" DBTable="GunType" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunType]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunType] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+      <Column Type="STR" Name="UPDATEDATE" Parameter="@UpdateDate@"/>
+      <Column Type="STR" Name="DELETE" Parameter="@Delete@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunSize" DBTable="GunSize" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunSize]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunSize] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunBrand" DBTable="GunBrand" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunBrand]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunSize] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunBarrel" DBTable="GunBarrel" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunBarrel]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunBarrel] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunColor" DBTable="GunColor" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunColor]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunColor] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunOwner" DBTable="GunOwner" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunOwner]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunOwner] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="GUNBOOK" WSTable="GunCountry" DBTable="GunCountry" DBConnectionID="MSSQLGUNBOOK" Detail="" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [GunCountry]
+        ([ID]
+        ,[Name]
+        ,[Description])
+        VALUES
+        ('@Name@'
+        ,'@Description@')
+      </Insert>
+      <Delete>DELETE FROM [GunCountry] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="DESCRIPTION" Parameter="@Description@"/>
+    </Columns>
+  </Process>
+  <Process OFSID="OF.0001" Name="JOB" WSTable="App_Job" DBTable="App_Job" DBConnectionID="MSSQLJOB" Detail="ข้อมูลใบสมัครงาน" UpdateDate="">
+   <Query>
+      <Insert>
+        INSERT INTO [Profile]
+        ([ID],[Name],[Age],[Position],[Salary],[Tel])
+        VALUES
+        ('@ID@','@Name@','@Age@','@Position@','@Salary@','@Tel@')
+      </Insert>
+      <Delete>DELETE FROM [Profile] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="NAME" Parameter="@Name@"/>
+      <Column Type="STR" Name="AGE" Parameter="@Age@"/>
+      <Column Type="STR" Name="POSITION" Parameter="@Position@"/>
+      <Column Type="STR" Name="SALARY" Parameter="@Salary@"/>
+      <Column Type="STR" Name="TEL" Parameter="@Tel@"/>
+    </Columns>
+ 
+    <Document>
+ 
+      <Items Name="WorkedInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            INSERT INTO [WorkExperience]
+            ([ID]
+            ,[Company]
+            ,[WorkStart]
+            ,[EndStart]
+            ,[Position])
+            VALUES
+            ( '@ID@'
+            ,'@Company@'
+            ,'@WorkStart@'
+            ,'@EndStart@'
+            ,'@Position@')
+          </Insert>
+          <Delete>DELETE FROM [WorkExperience] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="Company" Parameter="@Company@" />
+          <Column Type="STR" Name="WorkStart" Parameter="@WorkStart@" />
+          <Column Type="STR" Name="EndStart" Parameter="@EndStart@" />
+          <Column Type="STR" Name="Position" Parameter="@Position@" />
+        </Columns>
+      </Items>
+    </Document>
+
+  </Process>
+
+
+  <Process OFSID="OF.0001" Name="JOBAPP" WSTable="Job" DBTable="Job" DBConnectionID="MSSQLAPPJOB" Detail="ข้อมูลใบสมัครงาน" UpdateDate="">
+    <Query>
+      <Insert>
+        INSERT INTO [Profile]
+        ([ID],[FullName],[Position_Applied],[Salary],[Tel],[Email],[CreateDate],[CreateBy])
+        VALUES
+        ('@ID@','@FullName@','@PositionApp@','@Salary@','@Tel@','@Email@','@CreateDate@','@CreateBy@')
+      </Insert>
+      <Delete>DELETE FROM [Profile] WHERE ID = '@ID@'</Delete>
+    </Query>
+    <Columns>
+      <Column Type="STR" Name="ID" Parameter="@ID@" />
+      <Column Type="STR" Name="FULLNAME" Parameter="@FullName@"/>
+      <Column Type="STR" Name="POSITION_APPLIED" Parameter="@PositionApp@"/>
+      <Column Type="STR" Name="SALARY" Parameter="@Salary@"/>
+      <Column Type="STR" Name="TEL" Parameter="@Tel@"/>
+      <Column Type="STR" Name="EMAIL" Parameter="@Email@"/>
+      <Column Type="STR" Name="STATUS" Parameter="@Status@"/>
+      <Column Type="STR" Name="CREATEDATE" Parameter="@CreateDate@"/>
+      <Column Type="STR" Name="CREATEBY" Parameter="@CreateBy@"/>
+      <Column Type="STR" Name="UPDATEDATE" Parameter="@UpdateDate@"/>
+      <Column Type="STR" Name="UPDATEBY" Parameter="@UpdateBy@"/>
+    </Columns>
+
+    <Document>
+      <Items Name="WorkedInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            INSERT INTO [WorkExperience]
+            ([ID]
+            ,[Company]
+            ,[TimeFrom]
+            ,[TimeTo]
+            ,[Position]
+            ,[JobDescription]
+            ,[Salary])
+            VALUES
+            ( '@ID@'
+            ,'@Company@'
+            ,'@TimeFrom@'
+            ,'@TimeTo@'
+            ,'@Position@'
+            ,'@JobDescription@'
+            ,'@Salary@')
+          </Insert>
+
+          <Delete>DELETE FROM [WorkExperience] WHERE ID = '@ID@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="ID" Parameter="@ID@" />
+          <Column Type="STR" Name="Company" Parameter="@Company@" />
+          <Column Type="STR" Name="TimeFrom" Parameter="@TimeFrom@" />
+          <Column Type="STR" Name="TimeTo" Parameter="@TimeTo@" />
+          <Column Type="STR" Name="Position" Parameter="@Position@" />
+          <Column Type="STR" Name="JobDescription" Parameter="@JobDescription@" />
+          <Column Type="STR" Name="Salary" Parameter="@Salary@" />
+        </Columns>
+      </Items>
+    </Document>
+
+  </Process>
+
+  <Process OFSID="OF.0001" Name="JOB" WSTable="Person" DBTable="Person_Friend" DBConnectionID="MSSQLFACEBOOK" Detail="facebook" UpdateDate="">
+    <Query>
+      <Insert>
+        SELECT  1 as aaa
+      </Insert>
+      <Delete>SELECT  1 as aaa</Delete>
+    </Query>
+    <Columns>
+    </Columns>
+    <GobalColumns Name="UserInfo" Type="FIX">
+      <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+    </GobalColumns>
+    
+    <Document>
+      <Items Name="ProfileInfo" Type="FIX">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonFriend] WHERE PersonName = '@PersonName@' AND [PersonID] = '@UserID@'
+            INSERT INTO [dbo].[DimensionPersonFriend]
+            ([PersonID]
+            ,[PersonName]
+            ,[TimeStamp]
+            ,[TimeStampDisp]
+            ,[DateString])
+            VALUES
+            ('@UserID@','@PersonName@','','','' )
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPersonFriend] WHERE PersonName = '@PersonName@' AND [PersonID] = '@UserID@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="PersonName" Parameter="@PersonName@" />
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      
+      <Items Name="FriendInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [Facebook].[dbo].[DimensionPersonFriend] WHERE PersonID = '@PersonID@'
+            DELETE FROM [Facebook].[dbo].[Fact_Person] WHERE PersonID = '@PersonID@'
+            INSERT INTO [Facebook].[dbo].[DimensionPersonFriend]
+            ([PersonID]
+            ,[PersonName]
+            ,[TimeStamp]
+            ,[TimeStampDisp]
+            ,[DateString]
+            )
+            VALUES
+            ('@PersonID@','@PersonName@','@TimeStamp@','@TimeStampDisp@',
+            CASE WHEN '@TimeStampDisp@' != '' then
+            cast( 'Y' + SUBSTRING('@TimeStampDisp@',2,4) +
+            'M' + SUBSTRING('@TimeStampDisp@',7,2) +
+            'D' + SUBSTRING('@TimeStampDisp@',10,2) as varchar )
+            else
+            'Y0000M00D00' end
+            )
+            INSERT INTO [Facebook].[dbo].[Fact_Person]
+            ([ActionType]
+            ,[PersonID]
+            ,[Location]
+            ,[TimeStamp]
+            ,[DateString]
+            ,[y]
+            ,[m]
+            ,[d])
+            VALUES
+            ('@LastAct@' ,'@PersonID@' ,'' ,'@TimeStamp@' ,
+            CASE WHEN  '@TimeStampDisp@' != '' then
+            cast( 'Y' + SUBSTRING('@TimeStampDisp@',2,4) +
+            'M' + SUBSTRING('@TimeStampDisp@',7,2) +
+            'D' + SUBSTRING('@TimeStampDisp@',10,2) as varchar )
+            else
+            'Y0000M00D00' end,
+            cast(SUBSTRING('@TimeStampDisp@',2,4) as int),
+            cast(SUBSTRING('@TimeStampDisp@',7,2) as int),
+            cast(SUBSTRING('@TimeStampDisp@',10,2) as int)
+            )
+          </Insert>
+          <Delete>
+            DELETE FROM [Facebook].[dbo].[DimensionPersonFriend] WHERE PersonID = '@PersonID@'
+            DELETE FROM [Facebook].[dbo].[Fact_Person] WHERE PersonID = '@PersonID@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="RefDocIDPerson" Parameter="@PersonID@" />
+          <Column Type="STR" Name="PersonName" Parameter="@PersonName@"/>
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStamp@"/>
+          <Column Type="STR" Name="TimeStampDisp" Parameter="@TimeStampDisp@"/>
+          <Column Type="STR" Name="LastAct" Parameter="@LastAct@"/>
+        </Columns>
+        <GobalColumns Name="FriendInfo" Type="FIX">
+        </GobalColumns>
+      </Items>
+      <Items Name="FamilyMemberInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonFamily] WHERE PersonID = '@UserID@'  AND  [Name] = '@Name@'
+            INSERT INTO [dbo].[DimensionPersonFamily]
+            ([PersonID]
+            ,[FamilyID]
+            ,[Name]
+            ,[Relation])
+            VALUES
+            ('@UserID@','@UserID@','@Name@','@Relation@')
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonFamily] WHERE PersonID = '@UserID@'  AND  [Name] = '@Name@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@"/>
+          <Column Type="STR" Name="Relation" Parameter="@Relation@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="EducationExperienceInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonEducation] WHERE PersonID = '@UserID@'  AND  [Name] = '@Name@'
+            INSERT INTO [dbo].[DimensionPersonEducation]
+            ([PersonID]
+            ,ID
+            ,[Name]
+            ,[Graduated]
+            ,[SchoolType]
+            ,[Concentrations])
+            VALUES
+            ('@UserID@','@UserID@','@Name@','@Graduated@','@SchoolType@','@Concentrations@')
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonEducation] WHERE PersonID = '@UserID@'  AND  [Name] = '@Name@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@"/>
+          <Column Type="STR" Name="Graduated" Parameter="@Graduated@"/>
+          <Column Type="STR" Name="SchoolType" Parameter="@SchoolType@"/>
+          <Column Type="STR" Name="Concentrations" Parameter="@Concentrations@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="PageInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonPage] WHERE PersonID = '@UserID@' AND  [Name] = '@Name@'
+            INSERT INTO [dbo].[DimensionPersonPage]
+            ([PersonID]
+            ,[ID]
+            ,[Name]
+            ,[Pages])
+            VALUES
+            ('@UserID@','@UserID@','@Name@','@pages@' )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonPage] WHERE PersonID = '@UserID@'  AND  [Name] = '@Name@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@"/>
+          <Column Type="STR" Name="pages" Parameter="@pages@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="GroupInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonGroup] WHERE TimeStamp = '@TimeStamp@'  
+            INSERT INTO [dbo].[DimensionPersonGroup]
+            ([PersonID]
+            ,[Name]
+            ,[TimeStamp]
+            ,[TimeStampDisp])
+            VALUES
+            ('@UserID@','@Name@','@TimeStamp@','@TimeStampDisp@' )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonGroup] WHERE TimeStamp = '@TimeStamp@' </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@"/>
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStamp@"/>
+          <Column Type="STR" Name="TimeStampDisp" Parameter="@TimeStampDisp@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="AdvertisersInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'
+            INSERT INTO [dbo].[DimensionPersonAdvertisers]
+            ([PersonID]
+            ,[Topics]
+            ,[Action]
+            ,[Timestamp]
+            ,[TimestampDisp]
+            ,[Type])
+            VALUES
+            ('@UserID@','@Topics@','@Action@','@Timestamp@','@TimestampDisp@','Advertisers' )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Topics" Parameter="@Topics@"/>
+          <Column Type="STR" Name="Action" Parameter="@Action@"/>
+          <Column Type="STR" Name="Timestamp" Parameter="@Timestamp@"/>
+          <Column Type="STR" Name="TimestampDisp" Parameter="@TimestampDisp@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="AdvertisersCustomAudiencesInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'
+            INSERT INTO [dbo].[DimensionPersonAdvertisers]
+            ([PersonID]
+            ,[Topics]
+            ,[Action]
+            ,[Timestamp]
+            ,[TimestampDisp]
+            ,[Type])
+            VALUES
+            ('@UserID@','@Topics@','@Action@','@Timestamp@','@TimestampDisp@','AdvertisersCustomAudiences' )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Topics" Parameter="@Topics@"/>
+          <Column Type="STR" Name="Action" Parameter="@Action@"/>
+          <Column Type="STR" Name="Timestamp" Parameter="@Timestamp@"/>
+          <Column Type="STR" Name="TimestampDisp" Parameter="@TimestampDisp@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="AdvertisersHistory" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'
+            INSERT INTO [dbo].[DimensionPersonAdvertisers]
+            ([PersonID]
+            ,[Topics]
+            ,[Action]
+            ,[Timestamp]
+            ,[TimestampDisp]
+            ,[Type])
+            VALUES
+            ('@UserID@','@Topics@','@Action@','@Timestamp@','@TimestampDisp@','AdvertisersHistory' )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Topics" Parameter="@Topics@"/>
+          <Column Type="STR" Name="Action" Parameter="@Action@"/>
+          <Column Type="STR" Name="Timestamp" Parameter="@Timestamp@"/>
+          <Column Type="STR" Name="TimestampDisp" Parameter="@TimestampDisp@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="EventInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'
+            INSERT INTO [dbo].[DimensionPersonEvent]
+            ([PersonID]
+            ,[ID]
+            ,[Events]
+            ,[Name]
+            ,[Description]
+            ,[CreateTimeStamp]
+            ,[CreateTimeStampDisp]
+            ,[StartTimeStamp]
+            ,[StartTimeStampDisp]
+            ,[EndTimeStamp]
+            ,[EndTimeStampDisp]
+            ,[PlaceName]
+            ,[PlaceAdress]
+            ,[CoordinateLatitude]
+            ,[CoordinateLongitude])
+            VALUES
+            ('@UserID@'
+            ,'@UserID@'
+            ,'@Events@'
+            ,'@Name@'
+            ,'@Description@'
+            ,'@CreateTimeStamp@'
+            ,'@CreateTimeStampDisp@'
+            ,'@StartTimeStamp@'
+            ,'@StartTimeStampDisp@'
+            ,'@EndTimeStamp@'
+            ,'@EndTimeStampDisp@'
+            ,'@PlaceName@'
+            ,'@PlaceAdress@'
+            ,'@CoordinateLatitude@'
+            ,'@CoordinateLongitude@'
+            )
+          </Insert>
+          <Delete>DELETE FROM [DimensionPersonAdvertisers] WHERE TimeStamp = '@TimeStamp@'</Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Events" Parameter="@Events@"/>
+          <Column Type="STR" Name="Name" Parameter="@Name@"/>
+          <Column Type="STR" Name="Description" Parameter="@Description@"/>
+          <Column Type="STR" Name="CreateTimeStamp" Parameter="@CreateTimeStamp@"/>
+          <Column Type="STR" Name="CreateTimeStampDisp" Parameter="@CreateTimeStampDisp@"/>
+          <Column Type="STR" Name="StartTimeStamp" Parameter="@StartTimeStamp@"/>
+          <Column Type="STR" Name="StartTimeStampDisp" Parameter="@StartTimeStampDisp@"/>
+          <Column Type="STR" Name="EndTimeStamp" Parameter="@EndTimeStamp@"/>
+          <Column Type="STR" Name="EndTimeStampDisp" Parameter="@EndTimeStampDisp@"/>
+          <Column Type="STR" Name="PlaceName" Parameter="@PlaceName@"/>
+          <Column Type="STR" Name="PlaceAdress" Parameter="@PlaceAdress@"/>
+          <Column Type="STR" Name="CoordinateLatitude" Parameter="@CoordinateLatitude@"/>
+          <Column Type="STR" Name="CoordinateLongitude" Parameter="@CoordinateLongitude@"/>
+        </Columns>
+        <GobalColumns Name="UserInfo" Type="FIX">
+          <Column Type="STR" Name="UserID" Parameter="@UserID@" />
+        </GobalColumns>
+      </Items>
+    </Document>
+
+    
+  </Process>
+
+  <Process OFSID="OF.0001" Name="JOB" WSTable="Message" DBTable="Fact_Message" DBConnectionID="MSSQLFACEBOOK" Detail="facebook" UpdateDate="">
+    <Query>
+      <Insert>
+        SELECT  1 as aaa
+      </Insert>
+      <Delete>SELECT  1 as aaa</Delete>
+    </Query>
+    <Columns>
+    </Columns>
+    <GobalColumns Name="Page" Type="FIX">
+    </GobalColumns>
+
+    <Document>
+
+      <Items Name="MassageInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            INSERT INTO [dbo].[DimensionMessageDetail]
+            ([SenderName]
+            ,[UsersName]
+            ,[TimeStampMS]
+            ,[TimeStampMSDisp]
+            ,[Massage_Content]
+            ,[PhotosUri]
+            ,[FilesUri]
+            ,[AudioUri]
+            ,[ShareLink]
+            ,[StickerUri]
+            ,[Missed]
+            ,[CallDuration])
+            VALUES
+            ('@SenderName@' ,'@UsersName@' ,'@TimeStampMS@' ,'@TimeStampMSDisp@' ,'@Massage_Content@' ,
+            '@PhotosUri@' ,'@FilesUri@' ,'@AudioUri@' ,'@ShareLink@' ,'@StickerUri@' ,'@Missed@' ,'@CallDuration@' )
+            INSERT INTO [dbo].[Fact_Message]
+            ([TimeStampMS]
+            ,[Title]
+            ,[OwnerName]
+            ,[SenderName]
+            ,[Massage_Content]
+            ,[Location]
+            ,[DateString]
+            ,[y]
+            ,[m]
+            ,[d]
+            ,[H])
+            VALUES
+            ('@TimeStampMS@' ,'@Title@' ,'' ,'@SenderName@' ,'@Massage_Content@' ,'' ,
+            CASE WHEN  '@TimeStampMSDisp@' != '' then
+            cast( 'Y' + SUBSTRING('@TimeStampMSDisp@',2,4) +
+            'M' + SUBSTRING('@TimeStampMSDisp@',7,2) +
+            'D' + SUBSTRING('@TimeStampMSDisp@',10,2) as varchar )
+            else
+            'Y0000M00D00' end,
+            cast(SUBSTRING('@TimeStampMSDisp@',2,4) as int),
+            cast(SUBSTRING('@TimeStampMSDisp@',7,2) as int),
+            cast(SUBSTRING('@TimeStampMSDisp@',10,2) as int),
+            cast(SUBSTRING('@TimeStampMSDisp@',13,2) as int)
+            )
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionMessageDetail] WHERE TimeStampMS = '@TimeStampMS@'
+            DELETE FROM [Fact_Message] WHERE TimeStampMS = '@TimeStampMS@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="TimeStampMS" Parameter="@TimeStampMS@" />
+          <Column Type="STR" Name="Title" Parameter="@Title@"/>
+          <Column Type="STR" Name="OwnerName" Parameter="@OwnerName@"/>
+          <Column Type="STR" Name="SenderName" Parameter="@SenderName@"/>
+          <Column Type="STR" Name="Content" Parameter="@Massage_Content@"/>
+          <Column Type="STR" Name="MassageID" Parameter="@MassageID@"/>
+          <Column Type="STR" Name="UsersName" Parameter="@UsersName@"/>
+          <Column Type="STR" Name="TimeStampMSDisp" Parameter="@TimeStampMSDisp@"/>
+          <Column Type="STR" Name="PhotosUri" Parameter="@PhotosUri@"/>
+          <Column Type="STR" Name="FilesUri" Parameter="@FilesUri@"/>
+          <Column Type="STR" Name="AudioUri" Parameter="@AudioUri@"/>
+          <Column Type="STR" Name="ShareLink" Parameter="@ShareLink@"/>
+          <Column Type="STR" Name="StickerUri" Parameter="@StickerUri@"/>
+          <Column Type="STR" Name="Missed" Parameter="@Missed@"/>
+          <Column Type="STR" Name="CallDuration" Parameter="@CallDuration@"/>
+        </Columns>
+        <GobalColumns Name="Profile" Type="FIX">
+          <Column Type="STR" Name="Title" Parameter="@Title@"/>
+        </GobalColumns>
+      </Items>
+
+    </Document>
+
+
+  </Process>
+
+  <Process OFSID="OF.0001" Name="JOB" WSTable="Post" DBTable="Fact_Post" DBConnectionID="MSSQLFACEBOOK" Detail="facebook" UpdateDate="">
+    <Query>
+      <Insert>
+        SELECT  1 as aaa
+      </Insert>
+      <Delete>SELECT  1 as aaa</Delete>
+    </Query>
+    <Columns>
+    </Columns>
+    <GobalColumns Name="Post" Type="FIX">
+      <Column Type="STR" Name="UpdateBy" Parameter="@UpdateBy@" />
+    </GobalColumns>
+
+    <Document>
+      <Items Name="PostInfo" Type="FIX">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPost] WHERE TimeStamp = '@TimeStamp@'
+            INSERT INTO [dbo].[DimensionPost]
+            ([PersonID]
+            ,[Post]
+            ,[Title]
+            ,[TimeStamp]
+            ,[FullName]
+            ,[Latitude]
+            ,[Longitude]
+            ,[DateString]
+            ,[y]
+            ,[m]
+            ,[d])
+            VALUES
+            ('@TimeStamp@' 
+            , CASE WHEN '@Post@' = '' then '@Content@' else '@Post@' end
+            , CASE WHEN '@Title@' = '' then '@Topic@' else '@Title@' end
+            ,'@TimeStamp@' 
+            ,'' ,'' , '',
+            CASE WHEN  '@TimeStampDisp@' != '' then
+            cast( 'Y' + SUBSTRING('@TimeStampDisp@',2,4) +
+            'M' + SUBSTRING('@TimeStampDisp@',7,2) +
+            'D' + SUBSTRING('@TimeStampDisp@',10,2) as varchar )
+            else 'Y0000M00D00' end,
+            cast(SUBSTRING('@TimeStampDisp@',2,4) as int),
+            cast(SUBSTRING('@TimeStampDisp@',7,2) as int),
+            cast(SUBSTRING('@TimeStampDisp@',10,2) as int)
+            )
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPost] WHERE TimeStamp = '@TimeStamp@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStamp@" />
+          <Column Type="STR" Name="TimeStampDisp" Parameter="@TimeStampDisp@" />
+          <Column Type="STR" Name="Title" Parameter="@Title@"/>
+          <Column Type="STR" Name="Post" Parameter="@Post@"/>
+          <Column Type="STR" Name="Content" Parameter="@Content@"/>
+          <Column Type="STR" Name="Topic" Parameter="@Topic@"/>
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStamp@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="CommentInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [Fact_PostComment] WHERE [TimeStampComment] = '@TimeStampComment@'
+            INSERT INTO [dbo].[Fact_PostComment]
+            ([TimeStampPost]
+            ,[Author]
+            ,[Comment]
+            ,[Group_Comment]
+            ,[TimeStampComment]
+            ,[TimeStampDisp]
+            ,[Latitude]
+            ,[Longitude]
+            ,[DateString]
+            ,[y]
+            ,[m]
+            ,[d])
+            VALUES
+            ('@TimeStampPost@' 
+            ,'@Author@' 
+            ,'@Comment@' 
+            ,'@Group_Comment@' 
+            ,'@TimeStampComment@' 
+            ,'@TimeStampDisp@' 
+            ,''
+            ,'',
+            CASE WHEN  '@TimeStampDisp@' != '' then
+            cast( 'Y' + SUBSTRING('@TimeStampDisp@',2,4) +
+            'M' + SUBSTRING('@TimeStampDisp@',7,2) +
+            'D' + SUBSTRING('@TimeStampDisp@',10,2) as varchar )
+            else 'Y0000M00D00' end,
+            cast(SUBSTRING('@TimeStampDisp@',2,4) as int),
+            cast(SUBSTRING('@TimeStampDisp@',7,2) as int),
+            cast(SUBSTRING('@TimeStampDisp@',10,2) as int)
+            )
+          </Insert>
+          <Delete>
+            DELETE FROM [Fact_PostComment] WHERE [TimeStampComment] = '@TimeStampComment@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampComment@" />
+          <Column Type="STR" Name="Author" Parameter="@Author@"/>
+          <Column Type="STR" Name="Comment" Parameter="@Comment@"/>
+          <Column Type="STR" Name="Group" Parameter="@Group_Comment@"/>
+          <Column Type="STR" Name="TimeStampDisp" Parameter="@TimeStampDisp@"/>
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampPost@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="TagsInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPostTags] WHERE [PersonName] = '@PersonName@'
+            INSERT INTO [dbo].[DimensionPostTags]
+            ([TimeStampPost]
+            ,[PersonName])
+            VALUES
+            ('@TimeStampPost@' ,'@PersonName@' )
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPostTags] WHERE [PersonName] = '@PersonName@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="PersonName" Parameter="@PersonName@" />
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampPost@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="MediaInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPostMedia] WHERE [CreationTimestamp] = '@CreationTimestamp@'
+            INSERT INTO [dbo].[DimensionPostMedia]
+            ([TimeStampPost]
+            ,[Title]
+            ,[Description]
+            ,[CreationTimestamp]
+            ,[CreationTimestampDisp]
+            ,[Uri]
+            ,[ThumbnailUri]
+            ,[PhotoIsoSpeed]
+            ,[PhotoOrientation]
+            ,[PhotoOriginalHeight]
+            ,[PhotoOriginalWidth]
+            ,[PhotoUploadIp]
+            ,[VideoUploadIp]
+            ,[VideoUploadTimestamp]
+            ,[VideoUploadTimestampDisp])
+            VALUES
+            ('@TimeStampPost@' ,'@Title@','@Description@','@CreationTimestamp@','@CreationTimestampDisp@'
+            ,'@Uri@' ,'@ThumbnailUri@','@PhotoIsoSpeed@','@PhotoOrientation@','@PhotoOriginalHeight@','@PhotoOriginalWidth@','@PhotoUploadIp@'
+            ,'@VideoUploadIp@','@VideoUploadTimestamp@','@VideoUploadTimestampDisp@')
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPostMedia] WHERE [CreationTimestamp] = '@CreationTimestamp@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Title" Parameter="@Title@" />
+          <Column Type="STR" Name="Description" Parameter="@Description@" />
+          <Column Type="STR" Name="CreationTimestamp" Parameter="@CreationTimestamp@" />
+          <Column Type="STR" Name="CreationTimestampDisp" Parameter="@CreationTimestampDisp@" />
+          <Column Type="STR" Name="Uri" Parameter="@Uri@" />
+          <Column Type="STR" Name="ThumbnailUri" Parameter="@ThumbnailUri@" />
+          <Column Type="STR" Name="PhotoIsoSpeed" Parameter="@PhotoIsoSpeed@" />
+          <Column Type="STR" Name="PhotoOrientation" Parameter="@PhotoOrientation@" />
+          <Column Type="STR" Name="PhotoOriginalHeight" Parameter="@PhotoOriginalHeight@" />
+          <Column Type="STR" Name="PhotoOriginalWidth" Parameter="@PhotoOriginalWidth@" />
+          <Column Type="STR" Name="PhotoUploadIp" Parameter="@PhotoUploadIp@" />
+          <Column Type="STR" Name="VideoUploadIp" Parameter="@VideoUploadIp@" />
+          <Column Type="STR" Name="VideoUploadTimestamp" Parameter="@VideoUploadTimestamp@" />
+          <Column Type="STR" Name="VideoUploadTimestampDisp" Parameter="@VideoUploadTimestampDisp@" /> 
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampPost@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="PlaceInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPostPlace] WHERE [Latitude] = '@Latitude@' AND  [Longitude] = '@Longitude@'
+            INSERT INTO [dbo].[DimensionPostPlace]
+            ([TimeStampPost]
+            ,[Name]
+            ,[Address]
+            ,[Url]
+            ,[Latitude]
+            ,[Longitude])
+            VALUES
+            ('@TimeStampPost@' ,'@Name@','@Address@','@Url@','@Latitude@','@Longitude@' )
+            UPDATE [dbo].[Fact_PostComment]
+            SET [Latitude] = '@Latitude@'
+            ,[Longitude] = '@Longitude@'
+            WHERE [TimeStamp] = '@TimeStampPost@'
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPostPlace] WHERE [Latitude] = '@Latitude@' AND  [Longitude] = '@Longitude@'
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@" />
+          <Column Type="STR" Name="Address" Parameter="@Address@" />
+          <Column Type="STR" Name="Url" Parameter="@Url@" />
+          <Column Type="STR" Name="Latitude" Parameter="@Latitude@" />
+          <Column Type="STR" Name="Longitude" Parameter="@Longitude@" />
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampPost@" />
+        </GobalColumns>
+      </Items>
+      <Items Name="EventInfo" Type="SEQ">
+        <Query>
+          <Insert>
+            DELETE FROM [DimensionPostEvent] WHERE [Name] = '@Name@'
+            INSERT INTO [dbo].[DimensionPostEvent]
+            ([TimeStampPost]
+            ,[Name]
+            ,[StartTimestamp]
+            ,[StartTimestampDisp]
+            ,[EndTimestamp]
+            ,[EndTimestampDisp])
+            VALUES
+            ('@TimeStampPost@' ,'@Name@','@StartTimestamp@','@StartTimestampDisp@','@EndTimestamp@','@EndTimestampDisp@' )
+          </Insert>
+          <Delete>
+            DELETE FROM [DimensionPostEvent] WHERE [Name] = '@Name@'  
+          </Delete>
+        </Query>
+        <Columns>
+          <Column Type="STR" Name="Name" Parameter="@Name@" />
+          <Column Type="STR" Name="StartTimestamp" Parameter="@StartTimestamp@" />
+          <Column Type="STR" Name="StartTimestampDisp" Parameter="@StartTimestampDisp@" />
+          <Column Type="STR" Name="EndTimestamp" Parameter="@EndTimestamp@" />
+          <Column Type="STR" Name="EndTimestampDisp" Parameter="@EndTimestampDisp@" />
+        </Columns>
+        <GobalColumns Name="PostInfo" Type="FIX">
+          <Column Type="STR" Name="TimeStamp" Parameter="@TimeStampPost@" />
+        </GobalColumns>
+      </Items>
+    </Document>
+
+
+  </Process>
+  
+</Config>

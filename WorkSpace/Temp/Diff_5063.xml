@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xd:xmldiff version="1.0" srcDocHash="15241521924143731483" options="None" fragments="no" xmlns:xd="http://schemas.microsoft.com/xmltools/2002/xmldiff">
+  <xd:node match="1">
+    <xd:node match="1">
+      <xd:node match="1">
+        <xd:node match="1">
+          <xd:node match="8">
+            <xd:change match="@C06">15/07/2019 11:40:11</xd:change>
+            <xd:change match="@C03">1</xd:change>
+          </xd:node>
+        </xd:node>
+      </xd:node>
+    </xd:node>
+  </xd:node>
+</xd:xmldiff>

@@ -1,0 +1,20 @@
+﻿<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="BookClassInfo" Type="STR">
+      <Items Name="BookClass" Type="FIX">
+        <Item Name="BOOK_CLASS_NAME" Type="STR" Value="" />
+        <Item Name="BOOK_COUNT" Type="STR" Value="" />        
+        <Item Name="BOOK_MAX" Type="STR" Value="" />
+        <Item Name="CREATE_DATE" Type="STR" Value="" />
+        <Item Name="UPDATE_DATE" Type="STR" Value="" />
+      </Items>
+    </Section>
+    <Section ID="2" Name="ReferenceBook" Type="STR">
+      <Items Name="ReferenceBookInfo" Type="SEQ">
+        <Means Name="ReferenceBook">
+          <Mean ID="C00" Name="BookID" Type="STR" Desc="" />
+        </Means>
+      </Items>
+    </Section>
+  </Data>
+</Document>

@@ -1,0 +1,29 @@
+<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="SubPageInfo" Type="STR">
+      <Items Name="SubPage" Type="FIX">
+        <Item Name="PAGE_ID" Type="STR" Value="1" />
+        <Item Name="WINNER" Type="STR" Value="1" />
+        <Item Name="ROW_COUNT" Type="STR" Value="0" />
+        <Item Name="ROW_MAX" Type="STR" Value="3" />
+        <Item Name="CREATE_DATE" Type="STR" Value="20/06/2019 11:32:22" />
+        <Item Name="UPDATE_DATE" Type="STR" Value="20/06/2019 11:57:26" />
+      </Items>
+    </Section>
+    <Section ID="2" Name="Row" Type="STR">
+      <Items Name="RowInfo" Type="SEQ">
+        <Means Name="Row">
+          <Mean ID="C00" Name="DocClassID" Type="STR" Desc="" />
+          <Mean ID="C01" Name="DocID" Type="STR" Desc="" />
+          <Mean ID="C02" Name="Token" Type="STR" Desc="" />
+          <Mean ID="C03" Name="Hashing" Type="STR" Desc="" />
+          <Mean ID="C04" Name="DSig" Type="STR" Desc="" />
+          <Mean ID="C05" Name="SpaceGateID_Sender" Type="STR" Desc="" />
+          <Mean ID="C06" Name="SpaceGateID_Update" Type="STR" Desc="" />
+        </Means>
+        <Item C00="Ticket" C01="315" C02="" C03="" C04="" C05="1" C06="20/06/2019 11:33:54" />
+        <Item C00="Ticket" C01="316" C02="" C03="" C04="" C05="1" C06="20/06/2019 11:57:25" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

@@ -1,0 +1,10 @@
+﻿<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="TicketInfo" Type="STR">
+      <Items Name="Ticket" Type="FIX">
+        <Item Name="TICKET_ID" Type="STR" Value="" />
+        <Item Name="CREATE_DATE" Type="STR" Value="" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

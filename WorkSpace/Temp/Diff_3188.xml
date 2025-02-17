@@ -1,0 +1,29 @@
+<xd:xmldiff version="1.0" srcDocHash="7007220152672838981" options="None" fragments="no" xmlns:xd="http://schemas.microsoft.com/xmltools/2002/xmldiff">
+  <xd:node match="1">
+    <xd:node match="1">
+      <xd:node match="1">
+        <xd:node match="1">
+          <xd:node match="10">
+            <xd:change match="@Value">13/3/2562 11:17:46</xd:change>
+          </xd:node>
+          <xd:node match="16">
+            <xd:change match="@Value">13/3/2562 11:17:46</xd:change>
+          </xd:node>
+        </xd:node>
+      </xd:node>
+      <xd:node match="2">
+        <xd:node match="1">
+          <xd:node match="8" />
+          <xd:add match="/1/1/2/1/17" opid="1" />
+          <xd:remove match="9" />
+          <xd:node match="16" />
+          <xd:add>
+            <Item C00="935655" C01="C35366" C02="" C03="????????????" C04="12" C05="????????" C06="" C07="" C08="" C09="????????????????? ????????????????" C10="50" C11="?2. ??? 2817/17 ???????? 14 ?.?. 17" C12="29/07/2517" C13="???????" C14="25/6/2560  12:7:15" C15="user18" C16="25/6/2560  12:7:53" C17="user18" />
+          </xd:add>
+          <xd:remove match="17" opid="1" />
+        </xd:node>
+      </xd:node>
+    </xd:node>
+  </xd:node>
+  <xd:descriptor opid="1" type="move" />
+</xd:xmldiff>

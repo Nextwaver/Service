@@ -1,0 +1,24 @@
+<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="SpaceGateInfo" Type="STR">
+      <Items Name="SpaceGate" Type="FIX">
+        <Item Name="SPACEGATE_ID" Type="STR" Value="1" />
+        <Item Name="SPACEGATE_IP" Type="STR" Value="http://192.168.1.36/SPADA/SpaceGate/WS/V1" />
+        <Item Name="SPACEGATE_DOMAIN" Type="STR" Value="nextwaverinc" />
+        <Item Name="CREATE_DATE" Type="STR" Value="17/07/2019 15:42:56" />
+        <Item Name="UPDATE_DATE" Type="STR" Value="" />
+      </Items>
+    </Section>
+    <Section ID="2" Name="SpaceGateOther" Type="STR">
+      <Items Name="SpaceGateOtherInfo" Type="SEQ">
+        <Means Name="SpaceGateOther">
+          <Mean ID="C00" Name="SpaceGateID" Type="STR" Desc="" />
+          <Mean ID="C01" Name="SpaceGateIP" Type="STR" Desc="" />
+          <Mean ID="C02" Name="SpaceGateDomain" Type="STR" Desc="" />
+        </Means>
+        <Item C00="1" C01="http://192.168.1.36/SPADA/SpaceGate/WS/V1" C02="nextwaverinc" />
+        <Item C00="2" C01="http://192.168.1.39/SPADA/SpaceGate/WS/V1" C02="nextwaverinc" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

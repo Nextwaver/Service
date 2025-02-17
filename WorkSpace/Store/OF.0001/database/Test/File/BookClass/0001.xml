@@ -1,0 +1,17 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="File" Name="">
+      <Items ID="BookClass" Name="">
+        <Means MaxID="5">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="BOOK_CLASS_NAME" Detail="system" Type="varchar" />
+          <Mean ID="C02" Name="BOOK_COUNT" Detail="system" Type="varchar" />
+          <Mean ID="C03" Name="BOOK_MAX" Detail="system" Type="varchar" />
+          <Mean ID="C04" Name="CREATE_DATE" Detail="system" Type="varchar" />
+          <Mean ID="C05" Name="UPDATE_DATE" Detail="system" Type="varchar" />
+        </Means>
+        <Item ID="1" C01="TICKET" C02="1" C03="5" C04="17/07/2019 15:42:56" C05="" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

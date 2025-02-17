@@ -1,0 +1,17 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="Doc" Name="">
+      <Items ID="SubPage" Name="">
+        <Means MaxID="6">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="PAGE_ID" Detail="system" Type="varchar" />
+          <Mean ID="C02" Name="WINNER" Detail="system" Type="varchar" />
+          <Mean ID="C03" Name="ROW_COUNT" Detail="system" Type="varchar" />
+          <Mean ID="C04" Name="ROW_MAX" Detail="system" Type="varchar" />
+          <Mean ID="C05" Name="CREATE_DATE" Detail="system" Type="varchar" />
+          <Mean ID="C06" Name="UPDATE_DATE" Detail="system" Type="varchar" />
+        </Means>
+      </Items>
+    </Section>
+  </Data>
+</Document>

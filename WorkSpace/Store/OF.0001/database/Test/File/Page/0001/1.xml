@@ -1,0 +1,25 @@
+<Document ID="" Name="">
+  <Data>
+    <Section ID="1" Name="PageInfo" Type="STR">
+      <Items Name="Page" Type="FIX">
+        <Item Name="BOOK_ID" Type="STR" Value="1" />
+        <Item Name="SUB_PAGE_COUNT" Type="STR" Value="5" />
+        <Item Name="SUB_PAGE_MAX" Type="STR" Value="5" />
+        <Item Name="CREATE_DATE" Type="STR" Value="17/07/2019 15:43:00" />
+        <Item Name="UPDATE_DATE" Type="STR" Value="17/07/2019 15:43:01" />
+      </Items>
+    </Section>
+    <Section ID="2" Name="ReferenceSubPage" Type="STR">
+      <Items Name="ReferenceSubPageInfo" Type="SEQ">
+        <Means Name="ReferenceSubPage">
+          <Mean ID="C00" Name="SubPageID" Type="STR" Desc="" />
+        </Means>
+        <Item C00="1" />
+        <Item C00="2" />
+        <Item C00="3" />
+        <Item C00="4" />
+        <Item C00="5" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

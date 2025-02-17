@@ -1,0 +1,24 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="Doc" Name="">
+      <Items ID="Ticket" Name="">
+        <Means MaxID="7">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="DOC_CLASS_ID" Detail="system" Type="varchar" />
+          <Mean ID="C02" Name="TOKEN" Detail="system" Type="varchar" />
+          <Mean ID="C03" Name="HASHING" Detail="system" Type="varchar" />
+          <Mean ID="C04" Name="DSIG" Detail="system" Type="varchar" />
+          <Mean ID="C05" Name="STATUS" Detail="system" Type="varchar" />
+          <Mean ID="C06" Name="CREATE_DATE" Detail="system" Type="varchar" />
+          <Mean ID="C07" Name="CREATE_BY" Detail="system" Type="varchar" />
+        </Means>
+        <Item ID="1" C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" />
+        <Item ID="2" C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" />
+        <Item ID="3" C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" />
+        <Item ID="4" C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" />
+        <Item ID="5" C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" />
+        <Item C01="Ticket" C02="" C03="" C04="" C05="Create" C06="11/07/2019" C07="Admin" ID="6" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

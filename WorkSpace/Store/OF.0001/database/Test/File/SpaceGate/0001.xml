@@ -1,0 +1,17 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="File" Name="">
+      <Items ID="SpaceGate" Name="">
+        <Means MaxID="5">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="SPACEGATE_ID" Detail="system" Type="varchar" />
+          <Mean ID="C02" Name="SPACEGATE_IP" Detail="system" Type="varchar" />
+          <Mean ID="C03" Name="SPACEGATE_DOMAIN" Detail="system" Type="varchar" />
+          <Mean ID="C04" Name="CREATE_DATE" Detail="system" Type="varchar" />
+          <Mean ID="C05" Name="UPDATE_DATE" Detail="system" Type="varchar" />
+        </Means>
+        <Item ID="1" C01="1" C02="http://192.168.1.36/SPADA/SpaceGate/WS/V1" C03="nextwaverinc" C04="17/07/2019 15:42:56" C05="" />
+      </Items>
+    </Section>
+  </Data>
+</Document>

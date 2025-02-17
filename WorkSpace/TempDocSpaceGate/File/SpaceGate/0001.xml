@@ -1,0 +1,16 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="File" Name="">
+      <Items ID="SpaceGate" Name="">
+        <Means MaxID="5">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="SPACEGATE_ID" Detail="system" Type="varchar" />
+          <Mean ID="C02" Name="SPACEGATE_IP" Detail="system" Type="varchar" />
+          <Mean ID="C03" Name="SPACEGATE_DOMAIN" Detail="system" Type="varchar" />
+          <Mean ID="C04" Name="CREATE_DATE" Detail="system" Type="varchar" />
+          <Mean ID="C05" Name="UPDATE_DATE" Detail="system" Type="varchar" />
+        </Means>
+      </Items>
+    </Section>
+  </Data>
+</Document>

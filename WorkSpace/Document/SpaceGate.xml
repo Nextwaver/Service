@@ -1,0 +1,22 @@
+﻿<Document ID="" Name="">
+    <Data>
+        <Section ID="1" Name="SpaceGateInfo" Type="STR">
+            <Items Name="SpaceGate" Type="FIX">
+                <Item Name="SPACEGATE_ID" Type="STR" Value="" />
+                <Item Name="SPACEGATE_IP" Type="STR" Value="" />
+                <Item Name="SPACEGATE_DOMAIN" Type="STR" Value="" />
+                <Item Name="CREATE_DATE" Type="STR" Value="" />
+                <Item Name="UPDATE_DATE" Type="STR" Value="" />
+            </Items>
+        </Section>
+          <Section ID="2" Name="SpaceGateOther" Type="STR">
+      <Items Name="SpaceGateOtherInfo" Type="SEQ">
+        <Means Name="SpaceGateOther">
+          <Mean ID="C00" Name="SpaceGateID" Type="STR" Desc="" />
+          <Mean ID="C01" Name="SpaceGateIP" Type="STR" Desc="" />
+          <Mean ID="C02" Name="SpaceGateDomain" Type="STR" Desc="" />
+        </Means>
+      </Items>
+    </Section>
+    </Data>
+</Document>
