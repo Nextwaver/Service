@@ -1,7 +1,7 @@
 <Document ID="1" Name="Table">
   <Data>
-    <Section ID="system" Name="">
-      <Items ID="users" Name="">
+    <Section ID="Doc" Name="">
+      <Items ID="Users" Name="">
         <Means MaxID="10">
           <Mean ID="ID" Name="ID" Detail="ID" Type="Auto" />
           <Mean ID="C01" Name="USERNAME" Detail="USERNAME" Type="varchar" />
@@ -14,9 +14,9 @@
           <Mean ID="C08" Name="CREATE_BY" Detail="CREATE_BY" Type="varchar" />
           <Mean ID="C09" Name="UPDATE_DATE" Detail="UPDATE_DATE" Type="varchar" />
           <Mean ID="C10" Name="UPDATE_BY" Detail="UPDATE_BY" Type="varchar" />
+		  <Mean ID="C11" Name="STATUS" Detail="STATUS" Type="varchar" />
         </Means>
-        <Item ID="1" C01="Admin" C02="admin" C03="" C04="Admin" C05="" C06="001" C07="29/01/2014" C08="Admin" C09="29/01/2014" C10="Admin" />
-        <Item ID="2" C03="" C05="" C06="002" C08="Admin" C10="Admin" C09="30/01/2014" C07="30/01/2014" C04="" C02="user" C01="user" />
+        <Item ID="1" C01="Admin" C02="admin" C03="" C04="Admin" C05="" C06="001" C07="29/01/2014" C08="Admin" C09="29/01/2014" C10="Admin" C11="" />        
       </Items>
     </Section>
   </Data>
