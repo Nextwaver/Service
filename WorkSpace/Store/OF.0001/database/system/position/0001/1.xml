@@ -1,0 +1,6 @@
+﻿<Views>
+  <View Name="Administrator" Enable="T" IconID="48" WaterMarkID="51">
+    <Item MappingID="1" Name="Server" Enable="T" IconID="39" />
+    <Item MappingID="2" Name="Position" Enable="T" IconID="2" />
+  </View>
+</Views>

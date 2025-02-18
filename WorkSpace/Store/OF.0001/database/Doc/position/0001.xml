@@ -1,0 +1,20 @@
+<Document ID="1" Name="Table">
+  <Data>
+    <Section ID="system" Name="">
+      <Items ID="position" Name="">
+        <Means MaxID="7">
+          <Mean ID="ID" Name="ID" Detail="" Type="Auto" />
+          <Mean ID="C01" Name="POSITION_CODE" Detail="" Type="varchar" />
+          <Mean ID="C02" Name="POSITION_NAME" Detail="" Type="varchar" />
+          <Mean ID="C03" Name="PARENT_CODE" Detail="" Type="varchar" />
+          <Mean ID="C04" Name="CREATE_DATE" Detail="" Type="varchar" />
+          <Mean ID="C05" Name="CREATE_BY" Detail="" Type="varchar" />
+          <Mean ID="C06" Name="UPDATE_DATE" Detail="" Type="varchar" />
+          <Mean ID="C07" Name="UPDATE_BY" Detail="" Type="varchar" />
+        </Means>
+        <Item ID="1" C01="001" C02="Administrator" C03="" C04="28/01/2014" C05="Admin" C06="28/01/2014" C07="Admin" />
+        <Item ID="2" C01="002" C02="User" C03="" C04="28/01/2014" C05="Admin" C06="28/01/2014" C07="Admin" />       
+      </Items>
+    </Section>
+  </Data>
+</Document>
