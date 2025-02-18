@@ -45,9 +45,17 @@ namespace WorkSpace
             //    app.UseExceptionHandler();
             //}
 
-            app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc();
+
+            app.UseRouting();
+            app.UseCors();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
         }
 
        
