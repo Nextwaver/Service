@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
-
+using Newtonsoft.Json;
 namespace WorkSpace.Models
 {
     public class ReturnDataTable
     {
         #region Property
 
-        public DataTable Data { get; set; }
+        public string Data { get; set; }
 
         #endregion
 
@@ -20,9 +20,9 @@ namespace WorkSpace.Models
         {
         }
 
-        public ReturnDataTable(DataTable Data)
+        public ReturnDataTable(DataTable dt)
         {
-            this.Data = Data;
+            this.Data = JsonConvert.SerializeObject(dt);
         }
 
         #endregion
